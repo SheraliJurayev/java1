@@ -1,23 +1,39 @@
 package one;
 
+
 import java.util.Scanner;
 
 public class exercises {
     public static void main(String[] args) {
-        Scanner firstNumber = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("A sonini kiriting: ");
-        int number1 = firstNumber.nextInt();
+        double[] numbers = new double[15];
 
-        Scanner  secondNumber = new Scanner(System.in);
-        System.out.print("b sonini kiriting: ");
-        int number2 = secondNumber.nextInt();
-
-        if(number1 % number2==0){
-            System.out.println( number1*2 + " Shart bajariladi");
-        } else {
-            System.out.println(number2 / 2 + " Shart bajarilmadi");
+        System.out.println("15 ta haqiqiy sonni kiriting:");
+        for (int i = 0; i < 15; i++) {
+            System.out.print("a" + (i + 1) + ": ");
+            numbers[i] = scanner.nextDouble();
         }
 
+        boolean increasing = true;
+        for (int i = 0; i < 14; i++) {
+            if (numbers[i] > numbers[i + 1]) {
+                increasing = false;
+                break;
+            }
+        }
+
+        if (increasing) {
+            System.out.println("Sonlar o'sish tartibida tartiblangan.");
+        } else {
+            int index = 1;
+            for (int i = 1; i < 15; i++) {
+                if (numbers[i] < numbers[i - 1]) {
+                    index = i + 1;
+                    break;
+                }
+            }
+            System.out.println("Tartib buzgan birinchi sonning tartib nomeri: a" + index);
+        }
     }
 }
