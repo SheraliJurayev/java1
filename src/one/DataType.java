@@ -6,10 +6,8 @@ public class DataType {
         while
         (i < 6) {
             System.out.println(i);
-
             i++
             ;
         }
-
     }
 }
