@@ -1,14 +1,16 @@
 package one;
 
 public class Methods {
-    static void myMethod() {
-        System.out.println("Ushbu funksiya bajarilsin");
+    static void myMethod(int age) {
+        if (age<18) {
+            System.out.println("Kirish taqiqlanadi !");
+        }else{
+            System.out.println("Kirish mumkin !");
+        }
     }
 public static void main(String[] args) {
-        myMethod();
-        myMethod();
-        myMethod();
-        myMethod();
+        myMethod(12);
+
 
 }
 }
